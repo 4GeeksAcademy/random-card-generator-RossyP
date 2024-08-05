@@ -9,6 +9,7 @@ const headerSymbol = document.getElementById("symbol-header");
 const bodyNumber = document.getElementById("number-body");
 const footerSymbol = document.getElementById("symbol-footer");
 const reload = document.getElementById("buttonReload");
+//const changeSize = document.getElementById("changeSize");
 
 let symbols = ["♥", "♠", "♣", "♦"];
 let numbers = ["As", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
@@ -36,20 +37,18 @@ function generateCard() {
     bodyNumber.style.color = "black";
   }
 
-  headerSymbol.style.fontSize = "100px";
-  footerSymbol.style.fontSize = "100px";
   footerSymbol.style.transform = "rotate(180deg)";
 
   if (randomNumber === "As") {
     headerSymbol.innerHTML = "";
     footerSymbol.innerHTML = "";
     bodyNumber.innerHTML = randomSymbol;
-    bodyNumber.style.fontSize = "220px";
+    bodyNumber.style.fontSize = "13.75rem";
   } else {
     headerSymbol.innerHTML = randomSymbol;
     bodyNumber.innerHTML = randomNumber;
     footerSymbol.innerHTML = randomSymbol;
-    bodyNumber.style.fontSize = "180px";
+    bodyNumber.style.fontSize = "11.25rem";
   }
   console.log(randomSymbol);
   console.log(randomNumber);
@@ -58,3 +57,5 @@ function generateCard() {
 reload.addEventListener("click", function() {
   generateCard();
 });
+
+setInterval(generateCard, 10000);
