@@ -1,1 +1,15 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  height: 100vh;
+}
+.card {
+  width: 400px;
+  height: 500px;
+}
+
+.card-header,
+.card-footer {
+  width: 100%;
+  /* max-height: 100px; */
+  height: 120px;
+}
